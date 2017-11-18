@@ -1,0 +1,57 @@
+<p id="notice" class="w3-panel"><%= notice %></p>
+
+<div class="w3-panel w3-aqua">
+
+<table class="w3-table-all">
+<thead>
+  <tr>
+    <th><h1>product</h1></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+
+<td>
+  <strong>Title:</strong>
+</td>
+<td>
+  <%= @product.title %>
+</td>
+</tr>
+<tr>
+<td>
+  <strong>Description:</strong>
+</td>
+<td>
+  <%= strip_tags(@product.description) %>
+</td>
+</tr>
+<tr>
+<td>
+  <strong>Image url:</strong>
+</td>
+<td>
+  <%= image_tag(@product.image_url) %>
+</td>
+</tr>
+<tr>
+<td>
+  <strong>Price:</strong>
+</td>
+<td>
+  <%= number_to_currency(@product.price) %>
+</td>
+</tr>
+
+
+<tr>
+<td>
+<%= link_to 'Edit', edit_product_path(@product) ,class:"w3-button w3-light-gray w3-border" %></td>
+<td>
+<%= link_to 'Back', products_path , class:"w3-button w3-light-gray w3-border" %>
+</td>
+</tr>
+</tbody>
+</table>
+</div>

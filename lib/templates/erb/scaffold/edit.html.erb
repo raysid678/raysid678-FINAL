@@ -1,0 +1,6 @@
+<h1>Editing <%= singular_table_name.titleize %></h1>
+
+<%%= render 'form', <%= singular_table_name %>: @<%= singular_table_name %> %>
+
+<%%= link_to 'Show', @<%= singular_table_name %> , class:"w3-button w3-light-gray w3-border" %> |
+<%%= link_to 'Back', <%= index_helper %>_path , class:"w3-button w3-light-gray w3-border"  %>

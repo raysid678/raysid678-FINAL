@@ -1,0 +1,42 @@
+<p id="notice" class="w3-panel"><%= notice %></p>
+
+<div class="w3-panel w3-aqua">
+
+<table class="w3-table-all">
+<thead>
+  <tr>
+    <th><h1>line_item</h1></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+
+<td>
+  <strong>Product:</strong>
+</td>
+<td>
+  <%= @line_item.product %>
+</td>
+</tr>
+
+<td>
+  <strong>Cart:</strong>
+</td>
+<td>
+  <%= @line_item.cart %>
+</td>
+</tr>
+
+
+<tr>
+<td>
+<%= link_to 'Edit', edit_line_item_path(@line_item) ,class:"w3-button w3-light-gray w3-border" %> 
+</td>
+<td>
+<%= link_to 'Back', line_items_path , class:"w3-button w3-light-gray w3-border" %>
+</td>
+</tr>
+</tbody>
+</table>
+</div>

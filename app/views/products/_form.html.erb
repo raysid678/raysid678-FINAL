@@ -1,0 +1,37 @@
+<%= form_for(product) do |f| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation" class="w3-panel">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="w3-panel">
+    <%= f.label :title %>
+    <%= f.text_field :title , class:"w3-input w3-border" %>
+  </div>
+
+  <div class="w3-panel">
+    <%= f.label :description %>
+    <%= f.text_area :description , class:"w3-input w3-border" %>
+  </div>
+
+  <div class="w3-panel">
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url , class:"w3-input w3-border" %>
+  </div>
+
+  <div class="w3-panel">
+    <%= f.label :price %>
+    <%= f.text_field :price , class:"w3-input w3-border" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :Submit, class:"w3-button w3-light-gray w3-border" %>
+  </div>
+<% end %>

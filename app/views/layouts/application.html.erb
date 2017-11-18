@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IT 231 Demo W3CSS</title>
+    
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body class="w3-container">
+
+    <div class="w3-bar w3-light-grey">
+      <a href="/" class="w3-bar-item w3-button w3-border">
+        <%= image_tag 'mad-icon.png', alt: 'The Mad Icon', height: '28', width: '28', style: 'display: block; margin-left: auto; margin-right: auto; margin-bottom: none; margin-top: none' %></a>
+      <a href="/static_pages/home" class="w3-bar-item w3-button w3-border">Home</a>
+      <a href="/" class="w3-bar-item w3-button w3-border">Store</a>
+      <a href="/static_pages/help" class="w3-bar-item w3-button w3-border">Help</a>
+      <a href="/static_pages/about" class="w3-bar-item w3-button w3-border">About</a>
+      <a href="/products" class="w3-bar-item w3-button w3-border">Products</a>
+      <a href="/carts" class="w3-bar-item w3-button w3-border">Carts</a>      
+      <a href="/line_items" class="w3-bar-item w3-button w3-border">LineItems</a>      
+    </div>
+
+   <div class="w3-container">
+    <%= yield %>
+   </div>    
+
+  </body>
+</html>

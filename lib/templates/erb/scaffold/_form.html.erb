@@ -1,0 +1,34 @@
+<%%= form_for(<%= singular_table_name %>) do |f| %>
+  <%% if <%= singular_table_name %>.errors.any? %>
+    <div id="error_explanation" class="w3-panel">
+      <h2><%%= pluralize(<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h2>
+
+      <ul>
+      <%% <%= singular_table_name %>.errors.full_messages.each do |message| %>
+        <li><%%= message %></li>
+      <%% end %>
+      </ul>
+    </div>
+  <%% end %>
+
+<% attributes.each do |attribute| -%>
+  <div class="w3-panel">
+<% if attribute.password_digest? -%>
+    <%%= f.label :password %>
+    <%%= f.password_field :password , class:"w3-input w3-border" %>
+  </div>
+
+  <div>
+    <%%= f.label :password_confirmation %>
+    <%%= f.password_field :password_confirmation , class:"w3-input w3-border" %>
+<% else -%>
+    <%%= f.label :<%= attribute.column_name %> %>
+    <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %> , class:"w3-input w3-border" %>
+<% end -%>
+  </div>
+
+<% end -%>
+  <div class="actions">
+    <%%= f.submit :Submit, class:"w3-button w3-light-gray w3-border" %>
+  </div>
+<%% end %>

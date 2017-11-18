@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+project:
+  title: MyProject1
+  description: MyProjectText
+  image_url: MyProject1.gif
+  price: 1.99
+  
+  
