@@ -1,0 +1,40 @@
+<%= form_for(order) do |f| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation" class="w3-panel">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+
+  <div class="w3-panel">
+    <%= f.label :name %>
+    <%= f.text_field :name , class:"w3-input w3-border" %>
+  </div>
+
+  <div class="w3-panel">
+    <%= f.label :address %>
+    <%= f.text_area :address , class:"w3-input w3-border" %>
+  </div>
+
+  <div class="w3-panel">
+    <%= f.label :email %>
+    <%= f.text_field :email , class:"w3-input w3-border" %>
+  </div>
+
+  <div class="w3-panel">
+    <%= f.label :pay_type %>
+    <%= f.select :pay_type, Order.pay_types.keys, prompt: 'Select a payment method',  class:"form-control"   %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :Submit, class:"w3-button w3-light-gray w3-border" %>
+  </div>
+<% end %>

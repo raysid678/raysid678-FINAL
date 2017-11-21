@@ -25,6 +25,11 @@
 <td>
 <%= link_to 'Back', carts_path , class:"w3-button w3-light-gray w3-border" %>
 </td>
+
+<%= button_to "Checkout", new_order_path, method: :get %>
+
+<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+
 </tr>
 </tbody>
 </table>
